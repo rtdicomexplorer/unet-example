@@ -1,0 +1,10 @@
+venv
+.env
+*.sql*
+*__pycache__
+staticfiles
+all-images
+unet-masks
+dataset
+predicted_masks
+weights
