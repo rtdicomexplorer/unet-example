@@ -31,7 +31,7 @@ class KariesSegmentationDataset(Dataset):
 
     def __getitem__(self, idx):
         img_path = self.images[idx]
-        mask_path = self.mask_dir / img_path.name
+        mask_path = self.masks[idx]
 
         image = Image.open(img_path).convert("RGB")
         mask = Image.open(mask_path).convert("L")  # L = 1 Kanal

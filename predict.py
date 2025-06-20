@@ -8,7 +8,7 @@ from albumentations.pytorch import ToTensorV2
 
 # === Einstellungen ===
 MODEL_PATH = "weights"
-MODEL_NAME = "unet_karies.pt"
+MODEL_NAME = "best_model.pt"
 IMAGE_DIR = "all-images"
 OUTPUT_DIR = "predicted_masks"
 IMG_SIZE = (512, 256)  # gleiche Größe wie beim Training

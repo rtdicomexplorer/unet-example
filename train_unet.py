@@ -86,7 +86,8 @@ for epoch in range(EPOCHS):
         best_val_loss = avg_val_loss
          # === Best Modell save ===
         os.makedirs(OUTPUT_DIR, exist_ok=True)
-        model_path = os.path.join(OUTPUT_DIR, f"{epoch+1:02d}_val{avg_val_loss:.4f}.pt")
+        # model_path = os.path.join(OUTPUT_DIR, f"{epoch+1:02d}_val{avg_val_loss:.4f}.pt")
+        model_path = os.path.join(OUTPUT_DIR, "best_model.pt")
         torch.save(model.state_dict(),  model_path)
         print(f"💾 Modell saved as {model_path}")
         counter = 0  # Reset, weil sich Modell verbessert hat
@@ -108,6 +109,6 @@ plt.xlabel("Epoch")
 plt.ylabel("Loss")
 plt.legend()
 plt.title("Loss timeline")
-plt.savefig("loss_plot.png")
+plt.savefig(os.path.join(OUTPUT_DIR, "loss_plot.png"))
 plt.close()
 print("📊 Loss graphic saved as loss_plot.png")
